@@ -1,0 +1,37 @@
+{
+  "name": "phildesigner-website",
+  "version": "0.0.1",
+  "description": "My personal website",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SrPhilippe/phildesigner-website.git"
+  },
+  "keywords": [
+    "design",
+    "designer",
+    "portfolio",
+    "web",
+    "application",
+    "pt",
+    "br",
+    "phil",
+    "philippe"
+  ],
+  "author": "Philippe Henrique",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SrPhilippe/phildesigner-website/issues"
+  },
+  "homepage": "https://github.com/SrPhilippe/phildesigner-website#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0"
+  }
+}
