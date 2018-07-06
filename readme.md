@@ -1,4 +1,4 @@
 ## About
-In this repository it contains my website code
+It contains my website recreation
 
 > made by [Philippe Henrique](https://fb.com/philippe.henriquee)

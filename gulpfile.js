@@ -6,7 +6,7 @@ let gulp = require('gulp'),
 
 gulp.task('default', () => {
     gulp.watch('./docs/sass/*.scss', ['doCSS'])
-    gulp.watch('./docs/js/*.js', ['doJS'])
+    // gulp.watch('./docs/js/*.js', ['doJS'])
 })
 
 gulp.task('doCSS', () => {

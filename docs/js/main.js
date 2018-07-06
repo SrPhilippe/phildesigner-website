@@ -1,13 +1,18 @@
-$(() => {
-    class Person {
-        constructor(name, lastname, age, gender) {
-            this.name = name
-            this.lastname = lastname
-            this.age = age
-            this.gender = gender
-        }
-    }
+$(document).ready(() => {
 
-    let p1 = new Person("João", "Carlos", 12, "masc");
-    console.log(p1.name)
+    $('#menu ul > li').each((index, el) => {
+        $(el).has('ul').children('a').append('<i class="fas fa-caret-right"></i>')
+        $(el).children('ul').addClass('disabled')
+    })
+
+
+    $('#menu ul > li').has('ul').hover((event) => {
+        let el = $(event.currentTarget).children('ul')
+        el.toggleClass('active')
+        el.toggleClass('disabled')
+    }, (event) => {
+        let el = $(event.currentTarget).children('ul')
+        el.toggleClass('active')
+        el.toggleClass('disabled')
+    })
 })

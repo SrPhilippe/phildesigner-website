@@ -1,3 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Amiko:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700');
+// Variables scope
+$highlight: #2185ba;
 * {
-    color: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    display: inline-block;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1024px;
+    width: 100%;
+}
+
+body {
+    font-size: 18px;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+nav#menu {
+    background-color: $highlight;
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        li {
+            &:hover {
+                a>.fas.fa-caret-right {
+                    transform: rotate(90deg);
+                }
+            }
+            * {
+                transition-duration: .4s;
+                transition-property: transform, background-color;
+                transition-timing-function: ease;
+            }
+            >ul {
+                display: none;
+                flex-wrap: wrap;
+                max-width: 250px;
+                position: absolute;
+                box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+                background-color: #fff;
+                &.active {
+                    display: flex;
+                    animation: .4s menuIn ease;
+                }
+                &.disabled {
+                    animation: 1s menuOut ease;
+                }
+                >li {
+                    width: 100%;
+                }
+                a {
+                    color: rgb(153, 153, 153);
+                    display: block;
+                }
+            }
+            a {
+                &:hover {
+                    color: #18bbfc;
+                }
+                >.fas {
+                    margin-left: .5em;
+                }
+                padding: 1em 1.3em;
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+    }
+}
+
+@keyframes menuIn {
+    from {
+        transform: scale(0.5);
+        border-radius: 100%;
+        margin-top: -20vh;
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes menuOut {
+    from {
+        border-radius: 100%;
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
