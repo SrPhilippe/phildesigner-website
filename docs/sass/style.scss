@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Amiko:400,600,700');
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700');
 // Variables scope
-$highlight: #2185ba;
+$highlight: #3f5466;
 * {
     margin: 0;
     padding: 0;
@@ -30,53 +30,69 @@ nav#menu {
         justify-content: center;
         align-items: center;
     }
-    ul {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        li {
-            &:hover {
-                a>.fas.fa-caret-right {
-                    transform: rotate(90deg);
-                }
-            }
+    .mobile {
+        width: 100%;
+        >div {
+            background-color: #fff;
+            width: 40px;
+            height: 2px;
+            margin: 10px;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            justify-content: center;
             * {
                 transition-duration: .4s;
                 transition-property: transform, background-color;
                 transition-timing-function: ease;
             }
-            >ul {
-                display: none;
-                flex-wrap: wrap;
-                max-width: 250px;
-                position: absolute;
-                box-shadow: 0 0 5px rgba(0, 0, 0, .5);
-                background-color: #fff;
-                &.active {
-                    display: flex;
-                    animation: .4s menuIn ease;
+            li {
+                &:hover {
+                    background-color: rgba(0, 0, 0, .3);
+                    a>.fas.fa-caret-right {
+                        transform: rotate(90deg);
+                    }
                 }
-                &.disabled {
-                    animation: 1s menuOut ease;
-                }
-                >li {
-                    width: 100%;
+                >ul {
+                    display: none;
+                    flex-wrap: wrap;
+                    max-width: 250px;
+                    position: absolute;
+                    box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+                    background-color: #fff;
+                    &.active {
+                        display: flex;
+                        animation: .4s menuIn ease;
+                    }
+                    &.disabled {
+                        animation: 1s menuOut ease;
+                    }
+                    >li {
+                        box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+                        width: 100%;
+                        &:hover {
+                            background-color: transparent;
+                            box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .15);
+                        }
+                    }
+                    a {
+                        color: rgb(153, 153, 153);
+                        display: block;
+                    }
                 }
                 a {
-                    color: rgb(153, 153, 153);
-                    display: block;
+                    &:hover {
+                        color: #18bbfc;
+                    }
+                    >.fas {
+                        margin-left: .5em;
+                    }
+                    padding: 1em 1.3em;
+                    text-decoration: none;
+                    color: #fff;
                 }
-            }
-            a {
-                &:hover {
-                    color: #18bbfc;
-                }
-                >.fas {
-                    margin-left: .5em;
-                }
-                padding: 1em 1.3em;
-                text-decoration: none;
-                color: #fff;
             }
         }
     }
@@ -103,3 +119,5 @@ nav#menu {
         opacity: 0;
     }
 }
+
+@import "mobile";
