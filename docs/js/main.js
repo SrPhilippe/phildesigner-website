@@ -1,5 +1,25 @@
 $(document).ready(() => {
 
+    let siteConfig = {
+        description: "Dê um up na sua publicidade conosco! O primeiro contato de muitos clientes com sua marca irá fazer toda a diferença, não deixe de lado a cara do seu negócio.",
+        keywords: [
+            "web",
+            "design",
+            "designer",
+            "developer",
+            "banner",
+            "flyer",
+            "cartão",
+            "visitas",
+            "cartão de visitas",
+            "phil",
+            "trabalho",
+            "publicidade"
+        ]
+    }
+
+
+
     $('#menu .mobile > ul li').each((index, el) => {
         $(el).has('ul').children('a').append('<i class="fas fa-caret-right"></i>')
         $(el).children('ul').addClass('disabled')

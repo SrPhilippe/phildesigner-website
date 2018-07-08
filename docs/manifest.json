@@ -1,0 +1,13 @@
+{
+    "name": "PhilDesigner",
+    "short_name": "PhilDesigner",
+    "icons": [
+        {
+            "src": "img/logo.png",
+            "sizes": "any",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone"
+}
