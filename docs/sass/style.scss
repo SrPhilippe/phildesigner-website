@@ -36,7 +36,6 @@ a {
 }
 
 body {
-    height: 4000px;
     font-size: 18px;
     font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
@@ -100,6 +99,9 @@ nav#menu {
                     }
                     &.disabled {
                         animation: 1s menuOut ease;
+                    }
+                    &.active.mobile {
+                        animation: none !important;
                     }
                     >li {
                         box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);

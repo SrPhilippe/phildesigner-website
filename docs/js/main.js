@@ -17,19 +17,15 @@ $(document).ready(() => {
         })
     } else {
         $('#menu .mobile > ul > li').has('ul').click((event) => {
-            $(event.currentTarget).children('ul').toggleClass('active')
+            $(event.currentTarget).children('ul').toggleClass('active disabled')
+        })
+
+        $('.navigation').click((event) => {
+            $(event.currentTarget).next().is((index, el) => {
+                $(el).toggleClass('active')
+            })
         })
     }
-
-    $('.navigation').click((event) => {
-        $(event.currentTarget).next().is((index, el) => {
-            $(el).toggleClass('active')
-        })
-    })
-
-    $('#menu .mobile > ul li > ul').click((event) => {
-        $(event.currentTarget).toggleClass('active')
-    })
 
     $('#slider .item').each((index, el) => {
         $(el).css('background-image', `url(../img/slider/${index + 1}.jpg)`)
