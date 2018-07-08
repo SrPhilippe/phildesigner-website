@@ -17,11 +17,6 @@
         }
         .mobile {
             cursor: pointer;
-            &:hover {
-                >ul {
-                    // display: flex;
-                }
-            }
             ul {
                 display: none;
                 flex-direction: column;

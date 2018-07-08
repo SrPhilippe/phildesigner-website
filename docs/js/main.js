@@ -30,4 +30,28 @@ $(document).ready(() => {
     $('#menu .mobile > ul li > ul').click((event) => {
         $(event.currentTarget).toggleClass('active')
     })
+
+    $('#slider .item').each((index, el) => {
+        $(el).css('background-image', `url(../img/slider/${index + 1}.jpg)`)
+    })
+
+    $('#slider').slick({
+        infinite: true,
+        dots: false,
+        centerMode: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: false
+    })
+
+    $(window).scroll((event) => {
+        let top = $(window).scrollTop()
+        if (top > $('#slider').height()) {
+            $('#menu').addClass('active')
+        } else {
+            $('#menu').removeClass('active')
+        }
+    })
+
+
 })
