@@ -132,14 +132,16 @@ nav#menu {
     }
 }
 
-#logo {
-    position: absolute;
-    max-width: 250px;
-    padding: 20px;
-    margin-top: 30px;
-    background-color: #fff;
-    border-radius: 100%;
-    box-shadow: 0 0 0 3px #18bbfc;
+#header {
+    .logo {
+        position: absolute;
+        max-width: 250px;
+        padding: 20px;
+        margin-top: 30px;
+        background-color: #fff;
+        border-radius: 100%;
+        box-shadow: 0 0 0 3px #18bbfc;
+    }
 }
 
 #slider {

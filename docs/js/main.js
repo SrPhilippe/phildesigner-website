@@ -1,7 +1,30 @@
 $(document).ready(() => {
 
-    let siteConfig = {
-        description: "Dê um up na sua publicidade conosco! O primeiro contato de muitos clientes com sua marca irá fazer toda a diferença, não deixe de lado a cara do seu negócio.",
+    let desc = "Melhore a cara da sua empresa/negócio com a gente! Tudo o que você precisava era encontrar a pessoa certa para isso.",
+        image = "img/og-logo.png",
+        title = "PhilDesign website",
+        url = window.location.origin
+
+    let ceo = {
+        types: {
+            info: {
+                "description": desc
+            },
+            openGraph: {
+                "og:type": "website",
+                "og:image": image,
+                "og:description": desc,
+                "og:title": title,
+                "og:url": url,
+            },
+            twitter: {
+                "twitter:site": "@SrPhilipppe",
+                "twitter:image": image,
+                "twitter:description": desc,
+                "twitter:title": title,
+                "twitter:card": "summary"
+            }
+        },
         keywords: [
             "web",
             "design",
@@ -16,6 +39,18 @@ $(document).ready(() => {
             "trabalho",
             "publicidade"
         ]
+    }
+
+    for (let prop in ceo.types.openGraph) {
+        $('head').prepend(`<meta name="${prop}" content="${ceo.types.openGraph[prop]}">`)
+    }
+
+    for (let prop in ceo.types.info) {
+        $('head').prepend(`<meta name="${prop}" content="${ceo.types.info[prop]}">`)
+    }
+
+    for (let prop in ceo.types.twitter) {
+        $('head').prepend(`<meta name="${prop}" content="${ceo.types.twitter[prop]}">`)
     }
 
 
