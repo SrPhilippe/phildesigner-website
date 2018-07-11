@@ -6,7 +6,7 @@ $(document).ready(() => {
         url = window.location.origin
 
     let ceo = {
-        types: {
+        type: {
             info: {
                 "description": desc
             },
@@ -41,16 +41,16 @@ $(document).ready(() => {
         ]
     }
 
-    for (let prop in ceo.types.openGraph) {
-        $('head').prepend(`<meta name="${prop}" content="${ceo.types.openGraph[prop]}">`)
+    for (let prop in ceo.type.openGraph) {
+        $('head').prepend(`<meta name="${prop}" content="${ceo.type.openGraph[prop]}">`)
     }
 
-    for (let prop in ceo.types.info) {
-        $('head').prepend(`<meta name="${prop}" content="${ceo.types.info[prop]}">`)
+    for (let prop in ceo.type.info) {
+        $('head').prepend(`<meta name="${prop}" content="${ceo.type.info[prop]}">`)
     }
 
-    for (let prop in ceo.types.twitter) {
-        $('head').prepend(`<meta name="${prop}" content="${ceo.types.twitter[prop]}">`)
+    for (let prop in ceo.type.twitter) {
+        $('head').prepend(`<meta name="${prop}" content="${ceo.type.twitter[prop]}">`)
     }
 
 
@@ -101,6 +101,21 @@ $(document).ready(() => {
             $('#menu').addClass('active')
         } else {
             $('#menu').removeClass('active')
+        }
+    })
+
+
+    let $doc = $("html, body")
+    $(".scroll").click(function(event) {
+        $doc.animate({
+            scrollTop: $($.attr(this, "href")).offset().top
+        }, 500)
+        // e.preventDefault() // Just prevent the default action if you want to hide the anchor URL
+    })
+
+    $('#header .logo').on('click', (event) => {
+        if (window.location.href === window.location.origin) {
+            console.log(Sim)
         }
     })
 

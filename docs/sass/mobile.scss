@@ -41,10 +41,23 @@
         }
     }
     #header {
-        .container {
+        >.container {
             padding: 0 30px;
             .logo {
                 max-width: 150px;
+            }
+        }
+    }
+
+    #main {
+        .section {
+            &.proposal {
+                >.container {
+                    justify-content: center;
+                    .item {
+                        flex-basis: 90%;
+                    }
+                }
             }
         }
     }
