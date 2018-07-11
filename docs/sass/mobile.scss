@@ -42,15 +42,14 @@
     }
     #header {
         >.container {
-            padding: 0 30px;
             .logo {
                 max-width: 150px;
             }
         }
     }
-
     #main {
         .section {
+            font-size: 15px;
             &.proposal {
                 >.container {
                     justify-content: center;
@@ -61,4 +60,19 @@
             }
         }
     }
+    #footer {
+        .bottom-content {
+            >.container {
+                justify-content: center;
+                p:first-child {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+
+#header>.container,
+#footer .bottom-content>.container {
+    padding: 0 20px;
 }

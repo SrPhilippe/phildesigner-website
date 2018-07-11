@@ -97,7 +97,7 @@ $(document).ready(() => {
 
     $(window).scroll((event) => {
         let top = $(window).scrollTop()
-        if (top > $('#slider').height()) {
+        if (top >= $('#header').height()) {
             $('#menu').addClass('active')
         } else {
             $('#menu').removeClass('active')
@@ -114,7 +114,7 @@ $(document).ready(() => {
     })
 
     $('#header .logo').on('click', (event) => {
-        if (window.location.href === window.location.origin) {
+        if (window.location.href === window.location.origin + "/") {
             console.log(Sim)
         }
     })
