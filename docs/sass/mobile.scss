@@ -64,6 +64,9 @@
         .bottom-content {
             >.container {
                 justify-content: center;
+                p {
+                    text-align: center;
+                }
                 p:first-child {
                     margin-bottom: 10px;
                 }
@@ -73,6 +76,7 @@
 }
 
 #header>.container,
+#main .section.contact>.container,
 #footer .bottom-content>.container {
     padding: 0 20px;
 }

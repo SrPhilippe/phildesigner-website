@@ -120,4 +120,14 @@ $(document).ready(() => {
     })
 
 
+    $('.contact-form .item input, .contact-form .item textarea').each((index, el) => {
+        $(el).keyup(e => {
+            let letters = $(e.currentTarget).val().length
+            if (letters > 0) {
+                $(el).prevAll('p').addClass('active')
+            } else {
+                $(el).prevAll('p').removeClass('active')
+            }
+        })
+    })
 })

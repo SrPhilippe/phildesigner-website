@@ -3,6 +3,20 @@
 // Variables scope
 $highlight: #3f5466;
 $light-text: #eee;
+$link-color: #4fafe2;
+// -------------------
+input, textarea {
+    outline-color: $link-color;
+}
+
+input[type="submit"],
+button {
+    cursor: pointer;
+    appearance: none;
+    border: none;
+    font-size: 1em;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -86,7 +100,7 @@ nav#menu {
             }
             * {
                 transition-duration: .4s;
-                transition-property: transform, background-color;
+                transition-property: transform, background-color, padding;
                 transition-timing-function: ease;
             }
             li {
@@ -94,6 +108,9 @@ nav#menu {
                     background-color: rgba(0, 0, 0, .3);
                     a>.fas.fa-caret-right {
                         transform: rotate(90deg);
+                    }
+                    a {
+                        padding: 1em 1.8em;
                     }
                 }
                 >ul {
@@ -129,15 +146,15 @@ nav#menu {
                 }
                 a {
                     box-shadow: none;
+                    padding: 1em 1.3em;
+                    text-decoration: none;
+                    color: #fff;
                     &:hover {
                         color: #18bbfc;
                     }
                     >.fas {
                         margin-left: .5em;
                     }
-                    padding: 1em 1.3em;
-                    text-decoration: none;
-                    color: #fff;
                 }
             }
         }
@@ -207,6 +224,60 @@ nav#menu {
                             font-size: 5em;
                             margin-right: 15px;
                         }
+                    }
+                }
+            }
+        }
+        &.contact {
+            >.container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                p {
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+                .contact-form {
+                    max-width: 660px;
+                    width: 100%;
+                    .item {
+                        p {
+                            transition-duration: .4s;
+                            transition-timing-function: ease;
+                            z-index: 800;
+                            position: absolute;
+                            margin-top: .5em;
+                            margin-left: .5em;
+                            color: #3f5466;
+                            &.active {
+                                color: $light-text;
+                                font-size: .75em;
+                                margin-top: -0.8em;
+                                margin-left: .1em;
+                                background-color: $link-color;
+                                padding: 3px 10px;
+                                border-radius: 50px;
+                            }
+                        }
+                        textarea {
+                            font-family: 'Open Sans' !important;
+                            resize: none;
+                        }
+                        input,
+                        textarea {
+                            margin-bottom: 15px;
+                            display: block;
+                            width: 100%;
+                            padding: .5em .8em;
+                            font-size: 1em !important;
+                        }
+                    }
+                    input[type="submit"] {
+                        width: 100%;
+                        padding: 1.5em;
+                        background-color: $link-color;
+                        color: $light-text;
+                        border-radius: 100px;
                     }
                 }
             }
