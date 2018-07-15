@@ -1,6 +1,7 @@
 {
     "name": "PhilDesigner",
     "short_name": "PhilDesigner",
+    "description": "Potfólio",
     "icons": [
         {
             "src": "img/logo.png",
@@ -9,5 +10,6 @@
         }
     ],
     "start_url": "/",
-    "display": "standalone"
+    "display": "standalone",
+    "background-color": "#2185ba"
 }

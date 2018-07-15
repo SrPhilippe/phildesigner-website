@@ -102,6 +102,12 @@ $(document).ready(() => {
         } else {
             $('#menu').removeClass('active')
         }
+
+        if (top > ($('body').height() - $(window).height()) * 0.5) {
+            $('#scroll-top').fadeIn()
+        } else {
+            $('#scroll-top').fadeOut()
+        }
     })
 
 
@@ -111,12 +117,6 @@ $(document).ready(() => {
             scrollTop: $($.attr(this, "href")).offset().top
         }, 500)
         // e.preventDefault() // Just prevent the default action if you want to hide the anchor URL
-    })
-
-    $('#header .logo').on('click', (event) => {
-        if (window.location.href === window.location.origin + "/") {
-            console.log(Sim)
-        }
     })
 
 
