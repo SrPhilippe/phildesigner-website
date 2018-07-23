@@ -1,15 +1,13 @@
 let gulp = require('gulp'),
     sass = require('gulp-sass'),
     csso = require('gulp-csso'),
-    prefix = require('gulp-autoprefixer'),
-    uglify = require('gulp-uglify')
+    prefix = require('gulp-autoprefixer')
 
 gulp.task('default', () => {
-    gulp.watch('./docs/sass/*.scss', ['doCSS'])
-    // gulp.watch('./docs/js/*.js', ['doJS'])
+    gulp.watch('./docs/sass/*.scss', ['css-deal'])
 })
 
-gulp.task('doCSS', () => {
+gulp.task('css-deal', function() {
     gulp.src('./docs/sass/style.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(csso())
@@ -18,10 +16,4 @@ gulp.task('doCSS', () => {
         }))
         .pipe(gulp.dest('./docs/dist'))
 
-})
-
-gulp.task('doJS', () => {
-    gulp.src('./docs/sass/style.scss')
-        .pipe(uglify())
-        .pipe(gulp.dest('./docs/dist'))
 })

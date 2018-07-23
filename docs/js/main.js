@@ -80,6 +80,10 @@ $(document).ready(() => {
                 $(el).toggleClass('active')
             })
         })
+
+        $('#menu li > a').has('.scroll').click((event) => {
+            console.log($(event.target))
+        })
     }
 
     $('#slider .item').each((index, el) => {
@@ -95,18 +99,17 @@ $(document).ready(() => {
         arrows: false
     })
 
-    $(window).scroll((event) => {
+    $(window).scroll(event => {
         let top = $(window).scrollTop()
         if (top >= $('#header').height()) {
             $('#menu').addClass('active')
         } else {
             $('#menu').removeClass('active')
         }
-
         if (top > ($('body').height() - $(window).height()) * 0.5) {
-            $('#scroll-top').fadeIn()
+            $('#scroll-top').fadeIn(400)
         } else {
-            $('#scroll-top').fadeOut()
+            $('#scroll-top').fadeOut(400)
         }
     })
 
@@ -116,7 +119,7 @@ $(document).ready(() => {
         $doc.animate({
             scrollTop: $($.attr(this, "href")).offset().top
         }, 500)
-        // e.preventDefault() // Just prevent the default action if you want to hide the anchor URL
+        // event.preventDefault() // Just prevent the default action if you want to hide the anchor URL
     })
 
 
