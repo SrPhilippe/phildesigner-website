@@ -1,5 +1,7 @@
 $(document).ready(() => {
 
+    document.querySelector('div[style="text-align: right;position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;cursor: pointer;line-height: 0;display:block !important;"]').remove();
+
     let desc = "Melhore a cara da sua empresa/negócio com a gente! Tudo o que você precisava era encontrar a pessoa certa para isso.",
         image = "img/og-logo.png",
         title = "PhilDesign website",
